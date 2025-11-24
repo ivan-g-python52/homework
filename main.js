@@ -1,12 +1,17 @@
 'use strict';
-const names = ["иван", "АННА", "петр", "ОЛЬГА"];
+const students = [
+  { name: "Иван", score: 120 },
+  { name: "Мария", score: 95 },
+  { name: "Алексей", score: 150 },
+  { name: "Светлана", score: 80 },
+  { name: "Дмитрий", score: 101 }
+];
 
-function formatNames(namesArray) {
-  return namesArray.map(name => {
-    const lowerCaseName = name.toLowerCase();
-    const firstLetter = lowerCaseName.charAt(0).toUpperCase();
-    const restOfName = lowerCaseName.slice(1);
-    return firstLetter + restOfName;
-  });
+function getPassingStudents(studentsList, passingScore) {
+  return studentsList.filter(student => student.score >= passingScore);
 }
-console.log(formatNames(names));
+const passingScore = 100;
+const passingStudents = getPassingStudents(students, passingScore);
+
+console.log("Все студенты:", students);
+console.log(`Студенты, сдавшие экзамен (балл >= ${passingScore}):`, passingStudents);

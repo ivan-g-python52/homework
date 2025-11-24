@@ -1,18 +1,32 @@
 'use strict';
-const students = [
-  { name: "Иван", grades: [5, 4, 3, 5] },
-  { name: "Мария", grades: [5, 5, 5, 4] },
-  { name: "Алексей", grades: [3, 3, 4, 3] }
-];
+let tasks = ["Выучить основы JS", "Помыть посуду", "Купить продукты"];
 
-function calculateAverage(grades) {
-  const sum = grades.reduce((total, grade) => total + grade, 0);
-  return sum / grades.length;
+function addTask(list, taskName) {
+  if (list.includes(taskName)) {
+    console.log("Задача уже существует");
+  } else {
+    list.push(taskName);
+    console.log(`Задача "${taskName}" добавлена`);
+  }
 }
-function getStudentReport(studentsList) {
-  return studentsList.map(student => ({
-    name: student.name,
-    averageGrade: calculateAverage(student.grades)
-  }));
+
+function completeTask(list, taskName) {
+  const taskIndex = list.indexOf(taskName);
+  
+  if (taskIndex !== -1) {
+    list.splice(taskIndex, 1);
+    console.log(`Задача "${taskName}" выполнена и удалена из списка`);
+  } else {
+    console.log("Задача не найдена");
+  }
 }
-console.log(getStudentReport(students));
+
+
+console.log("Начальный список задач:", tasks);
+addTask(tasks, "Почитать книгу");
+addTask(tasks, "Сделать зарядку");
+addTask(tasks, "Помыть посуду");
+console.log("Список после добавления:", tasks);
+completeTask(tasks, "Помыть посуду");
+completeTask(tasks, "Несуществующая задача");
+console.log("Финальный список:", tasks);

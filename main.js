@@ -1,16 +1,20 @@
 'use strict';
+const car = {
+    brand: 'Toyota',
+    model: 'Camry',
+    year: 2021,
+    isEngineOn: false,
 
-const userProfile ={
-    userName: 'developer123',
-    email: 'dev@example.com',
-    age: 25,
-    isLoggedIn: true
+    startEngine: function(){
+        this.isEngineOn = true;
+        console.log(`Двигатель ${this.brand} ${this.model} запущен.`);
+    },
+
+    stopEngine: function () {
+        this.isEngineOn = false;
+        console.log(`Двигатель ${this.brand} ${this.model} заглушен.`);
+    }
 };
-console.log(userProfile.email);
 
-userProfile.age = 26;
-
-console.log(userProfile.age);
-
-userProfile['user Location'] = 'New York';
-console.log(userProfile['user Location']);
+car.startEngine();
+car.stopEngine();

@@ -1,17 +1,19 @@
 'use strict';
-const students = [
-  { name: "Иван", score: 120 },
-  { name: "Мария", score: 95 },
-  { name: "Алексей", score: 150 },
-  { name: "Светлана", score: 80 },
-  { name: "Дмитрий", score: 101 }
-];
+//Реализуйте функции:
+//changeText() - изменяет текст элемента на Текст был изменен!
+//addText() - добавляет к текущему тексту " (дополнено)"
+//resetText() - возвращает исходный текст
 
-function getPassingStudents(studentsList, passingScore) {
-  return studentsList.filter(student => student.score >= passingScore);
+const mainText = document.getElementById('text-element');
+
+function changeText() {
+  mainText.textContent = 'Текст был изменен!';
 }
-const passingScore = 100;
-const passingStudents = getPassingStudents(students, passingScore);
 
-console.log("Все студенты:", students);
-console.log(`Студенты, сдавшие экзамен (балл >= ${passingScore}):`, passingStudents);
+function addText() {
+  mainText.textContent += " (дополнено)";
+}
+
+function resetText() {
+  mainText.textContent = 'Исходный текст этого параграфа';
+}

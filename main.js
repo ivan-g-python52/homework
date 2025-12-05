@@ -1,19 +1,23 @@
 'use strict';
-//Реализуйте функции:
-//changeText() - изменяет текст элемента на Текст был изменен!
-//addText() - добавляет к текущему тексту " (дополнено)"
-//resetText() - возвращает исходный текст
+//safeOutput() - выводит текст из input в safe-output используя textContent
+//unsafeOutput() - выводит текст из input в unsafe-output используя innerHTML
 
-const mainText = document.getElementById('text-element');
-
-function changeText() {
-  mainText.textContent = 'Текст был изменен!';
+function safeOutput() {
+  let userInput = document.getElementById('user-input');
+  const inputVlaue = userInput.value;
+  let safeText = document.getElementById('safe-output');
+  if (inputVlaue) {
+    safeText.textContent = inputVlaue;
+    userInput.value = '';
+  } 
 }
 
-function addText() {
-  mainText.textContent += " (дополнено)";
-}
-
-function resetText() {
-  mainText.textContent = 'Исходный текст этого параграфа';
+function unsafeOutput() {
+  let userInput = document.getElementById('user-input');
+  const inputVlaue = userInput.value;
+  let unsafeText = document.getElementById('unsafe-output');
+  if (inputVlaue) {
+    unsafeText.innerHTML = inputVlaue;
+    userInput.value = '';
+  } 
 }

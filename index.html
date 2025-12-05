@@ -6,12 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="task1">
-    <h2>Задание 1: Работа с текстом</h2>
-    <p id="text-element">Исходный текст этого параграфа</p>
-    <button onclick="changeText()">Изменить текст</button>
-    <button onclick="addText()">Добавить текст</button>
-    <button onclick="resetText()">Сбросить текст</button>
+    <div id="task2">
+    <h2>Задание 2: Безопасность</h2>
+    <div id="safe-output">Безопасная зона:</div>
+    <div id="unsafe-output">Небезопасная зона:</div>
+    <input type="text" id="user-input" placeholder="Введите любой текст">
+    <button onclick="safeOutput()">Безопасный вывод</button>
+    <button onclick="unsafeOutput()">Небезопасный вывод</button>
     </div>
     <script src="main.js"></script>
 </body>

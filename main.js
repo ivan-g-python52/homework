@@ -1,23 +1,23 @@
 'use strict';
-//safeOutput() - выводит текст из input в safe-output используя textContent
-//unsafeOutput() - выводит текст из input в unsafe-output используя innerHTML
+//addSimpleContent() - добавляет новый параграф с текстом "Новый текстовый блок"
+//addHTMLContent() - добавляет HTML блок с заголовком, параграфом и списком
+//clearContent() - очищает содержимое контейнера
 
-function safeOutput() {
-  let userInput = document.getElementById('user-input');
-  const inputVlaue = userInput.value;
-  let safeText = document.getElementById('safe-output');
-  if (inputVlaue) {
-    safeText.textContent = inputVlaue;
-    userInput.value = '';
-  } 
+function addSimpleContent() {
+  const paragraph = document.createElement('p');
+  paragraph.textContent = 'Новый текстовый блок';
+
+  const container = document.getElementById('dynamic-content');
+  container.append(paragraph);
 }
 
-function unsafeOutput() {
-  let userInput = document.getElementById('user-input');
-  const inputVlaue = userInput.value;
-  let unsafeText = document.getElementById('unsafe-output');
-  if (inputVlaue) {
-    unsafeText.innerHTML = inputVlaue;
-    userInput.value = '';
-  } 
+function addHTMLContent() {
+  const heading = document.createElement('h2');
+  heading.textContent = 'Динамический заголовок';
+
+  const paragraph = document.createElement('p');
+  paragraph.textContent = 'Это новый параграф';
+
+  const container = document.getElementById('dynamic-content');
+    container.append(heading, paragraph);
 }

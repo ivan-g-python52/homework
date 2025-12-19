@@ -1,36 +1,27 @@
 'use strict';
-//addSimpleContent() - добавляет новый параграф с текстом "Новый текстовый блок"
-//addHTMLContent() - добавляет HTML блок с заголовком, параграфом и списком
-//clearContent() - очищает содержимое контейнера
+const styleDemo = document.getElementById('style-demo');
 
-function addSimpleContent() {
-  const paragraph = document.createElement('p');
-  paragraph.textContent = 'Новый текстовый блок';
-
-  const container = document.getElementById('dynamic-content');
-  container.append(paragraph);
+function changeColor() {
+    styleDemo.style.backgroundColor = 'lightblue';
 }
 
-function addHTMLContent() {
-  const heading = document.createElement('h2');
-  heading.textContent = 'Динамический заголовок';
-
-  const paragraph = document.createElement('p');
-  paragraph.textContent = 'Это новый параграф';
-
-  
-  const container = document.getElementById('dynamic-content');
-  const list = document.createElement('ul');
-  const listItemArray = ['Первый элемент списка','Второй элемент списка','Третий элемент списка'];
-  listItemArray.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    list.appendChild(li);
-  });
-  container.append(heading, paragraph, list);
+function changeSize() {
+    styleDemo.style.width = '300px';
+    styleDemo.style.height = '100px';
 }
 
-function clearContent() {
-  const container = document.getElementById('dynamic-content');
-  container.innerHTML = '';
+function addBorder() {
+    styleDemo.style.borderRadius = '15px';
+    styleDemo.style.boxShadow = '5px 5px 15px rgba(0, 0, 0, 0.3)';
+    styleDemo.style.border = '2px solid #4a90e2';
+}
+
+function resetStyles() {
+    styleDemo.style.backgroundColor = '';
+    styleDemo.style.width = '';
+    styleDemo.style.height = '';
+    styleDemo.style.borderRadius = '';
+    styleDemo.style.boxShadow = '';
+    styleDemo.style.border = '1px solid black';
+    styleDemo.style.padding = '20px';
 }

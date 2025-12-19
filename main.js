@@ -18,6 +18,19 @@ function addHTMLContent() {
   const paragraph = document.createElement('p');
   paragraph.textContent = 'Это новый параграф';
 
+  
   const container = document.getElementById('dynamic-content');
-    container.append(heading, paragraph);
+  const list = document.createElement('ul');
+  const listItemArray = ['Первый элемент списка','Второй элемент списка','Третий элемент списка'];
+  listItemArray.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    list.appendChild(li);
+  });
+  container.append(heading, paragraph, list);
+}
+
+function clearContent() {
+  const container = document.getElementById('dynamic-content');
+  container.innerHTML = '';
 }

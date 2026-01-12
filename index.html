@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="task5">
+        <h2>Задание 5: Профиль пользователя</h2>
+        <div id="user-profile">
+            <h3 id="user-name">Иван Иванов</h3>
+            <p id="user-title">Студент</p>
+            <div id="user-bio">Люблю изучать JavaScript</div>
+        </div>
+        <input type="text" id="name-input" placeholder="Новое имя">
+        <button onclick="updateName()">Обновить имя</button>
+        <input type="text" id="title-input" placeholder="Новая должность">
+        <button onclick="updateTitle()">Обновить должность</button>
+        <textarea id="bio-input" placeholder="Новое описание"></textarea>
+        <button onclick="updateBio()">Обновить описание</button>
+        <button onclick="highlightProfile()">Подсветить профиль</button>
+        <button onclick="resetProfile()">Сбросить профиль</button>
+    </div>
+
     <script src="main.js"></script>
 </body>
 </html>

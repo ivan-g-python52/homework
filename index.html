@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Цветовой микшер</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="task5">
-        <h2>Задание 5: Профиль пользователя</h2>
-        <div id="user-profile">
-            <h3 id="user-name">Иван Иванов</h3>
-            <p id="user-title">Студент</p>
-            <div id="user-bio">Люблю изучать JavaScript</div>
+    <div class="color-mixer">
+        <h1>Цветовой микшер</h1>
+        
+        <div class="color-preview" id="color-preview"></div>
+        
+        <div class="slider-container">
+            <label>Красный (R):</label>
+            <input type="range" id="red-slider" min="0" max="255" value="128">
+            <span class="value-display" id="red-value">128</span>
         </div>
-        <input type="text" id="name-input" placeholder="Новое имя">
-        <button onclick="updateName()">Обновить имя</button>
-        <input type="text" id="title-input" placeholder="Новая должность">
-        <button onclick="updateTitle()">Обновить должность</button>
-        <textarea id="bio-input" placeholder="Новое описание"></textarea>
-        <button onclick="updateBio()">Обновить описание</button>
-        <button onclick="highlightProfile()">Подсветить профиль</button>
-        <button onclick="resetProfile()">Сбросить профиль</button>
+        
+        <div class="slider-container">
+            <label>Зеленый (G):</label>
+            <input type="range" id="green-slider" min="0" max="255" value="128">
+            <span class="value-display" id="green-value">128</span>
+        </div>
+        
+        <div class="slider-container">
+            <label>Синий (B):</label>
+            <input type="range" id="blue-slider" min="0" max="255" value="128">
+            <span class="value-display" id="blue-value">128</span>
+        </div>
+        
+        <div class="rgb-display">
+            Текущий цвет: 
+            <div class="color-code" id="color-code">RGB(128, 128, 128)</div>
+        </div>
+        
+        <div class="preset-colors">
+            <div class="preset-color" style="background: #ff0000;" data-rgb="255,0,0"></div>
+            <div class="preset-color" style="background: #00ff00;" data-rgb="0,255,0"></div>
+            <div class="preset-color" style="background: #0000ff;" data-rgb="0,0,255"></div>
+            <div class="preset-color" style="background: #ffff00;" data-rgb="255,255,0"></div>
+            <div class="preset-color" style="background: #ff00ff;" data-rgb="255,0,255"></div>
+            <div class="preset-color" style="background: #00ffff;" data-rgb="0,255,255"></div>
+        </div>
+        
+        <button id="random-btn" style="margin-top: 20px; padding: 10px 20px;">
+            Случайный цвет
+        </button>
     </div>
 
     <script src="main.js"></script>
